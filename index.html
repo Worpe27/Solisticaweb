@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Informe completo — Solistica</title>
+  <style>
+    :root {
+      --accent:#0b61a4;
+      --muted:#52606a;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --text:#0f1724;
+    }
+    body.dark {
+      --bg:#0f1724;
+      --card:#1a2533;
+      --text:#e8edf2;
+      --muted:#9aa6b2;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      transition:0.3s;
+    }
+    .container{max-width:1100px;margin:20px auto;padding:18px}
+    header{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#0d9bd6);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    h1{font-size:1.25rem;margin:0}
+    nav{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+    a.btn{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;text-decoration:none}
+
+    /* NUEVA COLUMNA DERECHA */
+    .tools-panel{
+      background:var(--card);
+      padding:14px;
+      border-radius:12px;
+      height:fit-content;
+      box-shadow:0 6px 18px rgba(15,23,36,0.08);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .tools-panel button{
+      padding:10px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      background:var(--accent);
+      color:white;
+      font-weight:600;
+    }
+
+    main{display:grid;grid-template-columns:1fr 260px;gap:16px;margin-top:18px}
+    section.card{background:var(--card);padding:18px;border-radius:12px;margin-bottom:12px;box-shadow:0 6px 18px rgba(15,23,36,0.04)}
+    .sub{color:var(--muted);font-size:0.95rem}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+    @media(max-width:900px){main{grid-template-columns:1fr} .tools-panel{position:sticky;top:0}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">S</div>
+      <div>
+        <h1>Informe: Análisis del sistema de información de Solistica</h1>
+        <div class="sub">Documento completo — incluye introducción, historia, procesos, tecnología, flujo de información, ventajas y recomendaciones</div>
+      </div>
+    </header>
+
+    <nav>
+      <a class="btn" href="#introduccion">Introducción</a>
+      <a class="btn" href="#historia">Historia</a>
+      <a class="btn" href="#procesos">Procesos</a>
+      <a class="btn" href="#tipossi">Tipos SI</a>
+      <a class="btn" href="#herramientas">Herramientas</a>
+      <a class="btn" href="#flujo">Flujo</a>
+      <a class="btn" href="#ventajas">Ventajas</a>
+      <a class="btn" href="#conclusiones">Conclusiones</a>
+      <a class="btn" href="#referencias">Referencias</a>
+    </nav>
+
+    <main>
+      <div style="flex:1;">
+        <section id="introduccion" class="card">
+          <div class="section-title"><h2>Introducción</h2></div>
+          <p class="sub">El desarrollo de sistemas de simulación física constituye una herramienta fundamental en la ingeniería y en las ciencias computacionales, ya que permite modelar, analizar y predecir el comportamiento de objetos sometidos a diversas fuerzas dentro de un entorno controlado. En el presente informe se describe el diseño, implementación y evaluación de un sistema que integra la simulación del comportamiento biomecánico de las patas de una araña, apoyado en técnicas matemáticas, modelos físicos, algoritmos de cálculo vectorial y estrategias de programación orientada a objetos.</p>
+          <p class="sub">Esta investigación resulta relevante porque permite comprender cómo se integran conceptos como cinemática, dinámica, vectores de fuerza, fricción, gravedad, colisiones y control de movimiento dentro de un entorno computacional capaz de simular fenómenos del mundo real. Asimismo, el estudio demuestra la importancia del uso de estructuras paralelas y optimizaciones que mejoran el rendimiento computacional, permitiendo que el sistema procese múltiples elementos de manera eficiente.</p>
+          <p class="sub">El trabajo no solo busca reproducir el movimiento natural de un organismo, sino también construir una base escalable para futuras investigaciones en robótica, animación digital, análisis de locomoción y sistemas de simulación avanzada. Finalmente, se presentan conclusiones basadas en la experimentación y recomendaciones para la evolución futura del sistema.</p>
+        </section>
+
+        <section id="historia" class="card">
+          <div class="section-title"><h2>Historia de Solistica</h2></div>
+
+          <h3>Origen dentro de FEMSA (1998–2013)</h3>
+          <p class="sub">Solistica tiene sus raíces en 1998, cuando FEMSA creó un departamento interno de logística para atender las necesidades de distribución de Coca-Cola FEMSA, OXXO y su división de bebidas. Bajo el nombre de FEMSA Logística, la organización se enfocó en la gestión vehicular, la administración de flotas y la optimización del transporte. Durante esta etapa inicial, la empresa consolidó experiencia operativa dentro del territorio mexicano.</p>
+
+          <h3>Consolidación como operador logístico nacional</h3>
+          <p class="sub">Entre 1998 y 2013, FEMSA Logística amplió progresivamente su capacidad operativa. El crecimiento de las unidades de negocio de FEMSA generó una demanda logística cada vez más compleja, lo que impulsó inversiones en infraestructura, centros de distribución y flota especializada. Esto posicionó a la compañía como uno de los operadores logísticos más relevantes en México, preparando el terreno para su expansión internacional.</p>
+
+          <h3>Expansión internacional mediante adquisiciones (2013–2017)</h3>
+          <p class="sub">A partir de 2013, FEMSA Logística emprendió una estrategia de crecimiento basada en la integración de empresas reconocidas en América Latina. Entre ellas:</p>
+          <ul class="sub">
+            <li>Expresso Jundiaí (Brasil) – Especialista en carga fraccionada.</li>
+            <li>Atlas Transportes y Logística (Brasil) – Con experiencia en transporte terrestre y aéreo.</li>
+            <li>Zimag (México) – Destacada en almacenamiento y transporte nacional.</li>
+            <li>Open Market (Colombia) – Especialista en distribución urbana y logística integral.</li>
+          </ul>
+          <p class="sub">Estas adquisiciones ampliaron su presencia regional, incrementaron sus capacidades operativas y diversificaron su experiencia en distintos sectores logísticos.</p>
+
+          <h3>Nacimiento de la marca Solistica (2017)</h3>
+          <p class="sub">En 2017, FEMSA Logística adoptó el nombre de Solistica para unificar todas las operaciones multinacionales bajo una identidad corporativa integrada. Con ello, se consolidó como proveedor de soluciones logísticas 3PL con alcance multinacional, ofreciendo servicios end-to-end desde almacenamiento y transporte hasta logística internacional y cadena de frío. Actualmente, Solistica opera en varios países latinoamericanos y atiende a miles de clientes en industrias diversas.</p>
+        </section>
+
+        <section id="procesos" class="card">
+          <div class="section-title"><h2>Procesos principales de Solistica</h2></div>
+
+          <h3>Gestión de Transporte y Distribución</h3>
+          <p class="sub">Incluye la planificación de rutas, asignación de flotas, monitoreo en tiempo real, operación de larga distancia y distribución de última milla. Este proceso requiere coordinación constante desde los centros de despacho para garantizar entregas puntuales, seguras y eficientes.</p>
+
+          <h3>Administración de Almacenes y Centros de Distribución</h3>
+          <p class="sub">Comprende la recepción de mercancías, clasificación, almacenamiento, control de inventarios y preparación de pedidos. Solistica gestiona almacenes multimodales, de temperatura controlada y centros cross-docking, adaptándose a productos perecederos o de alta rotación.</p>
+
+          <h3>Gestión de Cadena de Frío</h3>
+          <p class="sub">Incluye transporte refrigerado, monitoreo continuo de la temperatura, control de unidades térmicas y cumplimiento de normativas sanitarias para productos farmacéuticos y alimentarios.</p>
+
+          <h3>Logística Internacional</h3>
+          <p class="sub">Abarca operaciones de importación y exportación, cumplimiento aduanero, consolidación de carga, trámites documentarios y coordinación con operadores globales para garantizar trazabilidad en movimientos transfronterizos.</p>
+
+          <h3>Servicios de Valor Agregado (VAS)</h3>
+          <p class="sub">Engloba actividades complementarias como: etiquetado; empaque y reempaque; armado de kits; personalización de productos; logística inversa; remanufactura ligera. Estos procesos aumentan la eficiencia en la fase final de la cadena de suministro.</p>
+
+          <h3>Logística Inversa y Gestión de Devoluciones</h3>
+          <p class="sub">Solistica administra el retorno de productos, la recolección de mercancía defectuosa, la gestión de garantías y la recuperación de activos retornables, especialmente relevante para retail y electrónica.</p>
+
+          <h3>Mantenimiento y Gestión de Flota</h3>
+          <p class="sub">La empresa opera talleres propios para mantenimiento preventivo, correctivo y predictivo de vehículos. Este proceso asegura la disponibilidad operativa de la flota y reduce riesgos en carretera.</p>
+
+          <h3>Dependencia en Sistemas de Información</h3>
+          <p class="sub">Todos los procesos logísticos se apoyan en sistemas de monitoreo, plataformas de trazabilidad, herramientas de análisis de datos y centros de control. La disponibilidad de información precisa en tiempo real es crucial para la toma de decisiones operativas.</p>
+        </section>
+
+        <section id="tipossi" class="card">
+          <div class="section-title"><h2>Tipo de sistema de información</h2></div>
+          <p class="sub">Solistica emplea una arquitectura tecnológica integrada que combina diversos tipos de sistemas de información orientados a optimizar la cadena de suministro, garantizar trazabilidad y mejorar la toma de decisiones en mercados de alta exigencia operativa.</p>
+
+          <h3>Sistemas SCM (Supply Chain Management)</h3>
+          <p class="sub">Son el núcleo tecnológico de la empresa. Solistica utiliza plataformas de alto nivel como BlueYonder Luminate™ Logistics y Manhattan Active Supply Chain, las cuales permiten coordinar inventarios, transporte, rutas, almacenamiento, monitoreo de carga y planeación táctica. Estos sistemas integran información en tiempo real, predicen disrupciones y facilitan la ejecución sincronizada de procesos logísticos a gran escala.</p>
+
+          <h3>ERP (Enterprise Resource Planning)</h3>
+          <p class="sub">Mediante soluciones basadas en Oracle, Solistica integra información administrativa, financiera, operativa y de costos. Estos sistemas permiten modelar redes logísticas, analizar escenarios, gestionar flujos de materiales y administrar recursos de manera centralizada, asegurando coherencia entre las operaciones de diferentes países.</p>
+
+          <h3>DSS (Decision Support Systems)</h3>
+          <p class="sub">A través de las capacidades de inteligencia artificial y aprendizaje automático de BlueYonder, Solistica dispone de herramientas predictivas para anticipar riesgos operativos, disrupciones en rutas, cambios en la demanda y necesidades de recurso humano o infraestructura. Esto permite decisiones informadas y oportunas.</p>
+
+          <h3>TPS (Transaction Processing Systems)</h3>
+          <p class="sub">Este tipo de sistema gestiona operaciones repetitivas y esenciales: registro de entradas y salidas en almacenes, movimientos de inventario, órdenes de transporte, confirmación de entregas, monitoreo de temperatura, trazabilidad y control de vehículos.</p>
+
+          <h3>MIS (Management Information Systems)</h3>
+          <p class="sub">Generan reportes integrados de desempeño: indicadores logísticos, métricas de sostenibilidad, reportes de seguridad, productividad de recursos y niveles de servicio. Son fundamentales para monitorear la eficiencia, la calidad operativa y el cumplimiento de objetivos.</p>
+
+          <h3>BI (Business Intelligence)</h3>
+          <p class="sub">Solistica emplea herramientas de analítica integrada dentro de Oracle y BlueYonder, generando dashboards ejecutivos, análisis de tendencias, reportes automatizados, métricas comparativas y visualizaciones avanzadas. Esto permite decisiones basadas en datos y una evaluación precisa del desempeño logístico y financiero.</p>
+
+          <h3>Sistemas especializados</h3>
+          <p class="sub">La empresa utiliza soluciones adicionales orientadas a sectores específicos, como Green Box y Credo Cube para la cadena de frío. Estas tecnologías incorporan sensores de temperatura, monitoreo por Bluetooth y cumplimiento con normas regulatorias (Invima, ICA). También incluyen sistemas de trazabilidad diseñados para productos sensibles.</p>
+
+          <p class="sub">En conjunto, estos sistemas conforman un ecosistema digital integrado que permite a Solistica operar como un proveedor logístico 3PL altamente automatizado, eficiente y adaptable.</p>
+        </section>
+
+        <section id="herramientas" class="card">
+          <div class="section-title"><h2>Herramientas tecnológicas</h2></div>
+
+          <h3>Software utilizado</h3>
+          <p class="sub"><strong>Oracle:</strong> Utilizado para modelar redes logísticas, planificar recursos, gestionar almacenes, controlar inventarios y coordinar datos administrativos. Ha sido reconocido como líder en gestión de almacenes durante siete años consecutivos, reflejando su confiabilidad y alcance.</p>
+
+          <p class="sub"><strong>BlueYonder Luminate™ Logistics:</strong> Plataforma cloud con IA y machine learning, que permite anticipar disrupciones, optimizar rutas, gestionar carga en tiempo real y mejorar la precisión operativa.</p>
+
+          <p class="sub"><strong>Manhattan Active Supply Chain:</strong> Sistema que integra flujos entrantes y salientes, sincroniza operaciones de picking, recepción, transporte y despacho, y permite ajustes en tiempo real desde una vista centralizada.</p>
+
+          <p class="sub"><strong>Soluciones de cadena de frío (Green Box, Credo Cube):</strong> Integran monitoreo Bluetooth, sensores térmicos y sistemas certificados por normas regulatorias.</p>
+
+          <h3>Bases de datos</h3>
+          <p class="sub">Solistica opera con repositorios centralizados soportados por Oracle y BlueYonder, donde se concentran datos de: inventarios; rutas y tiempos; órdenes de transporte; temperaturas y condiciones ambientales; métricas de sostenibilidad; reportes operativos y gerenciales. Estas bases permiten consultas rápidas, trazabilidad y auditorías internas o regulatorias.</p>
+
+          <h3>Hardware y dispositivos</h3>
+          <p class="sub">La infraestructura incluye: sensores de temperatura y humedad; dispositivos Bluetooth para monitoreo en cadena de frío; terminales móviles para picking y escaneo; centros de control equipados con paneles de visualización; equipos para gestión de flotas y rastreo GPS. Estos dispositivos permiten capturar datos en tiempo real desde toda la operación.</p>
+
+          <h3>Uso de la nube</h3>
+          <p class="sub">Tanto BlueYonder como Manhattan funcionan bajo entornos cloud, permitiendo: acceso simultáneo desde diferentes países; integración de datos en una sola plataforma; reducción de tiempos de actualización; escalabilidad operativa y flexibilidad tecnológica. Esto facilita la operación multinacional.</p>
+
+          <h3>Integración entre áreas</h3>
+          <p class="sub">Los sistemas permiten sincronizar almacenes, transporte, cadena de frío, facturación, recursos humanos, seguridad operativa y sostenibilidad. Esto asegura un flujo continuo de información y una ejecución coordinada en todos los niveles.</p>
+
+          <h3>Seguridad</h3>
+          <p class="sub">Protocolos de cifrado y resguardos provistos por Oracle y BlueYonder; monitoreo constante de operaciones críticas; cumplimiento de normas regulatorias (Invima, ICA, certificaciones ambientales e ISO); mecanismos de control para auditorías internas y externas.</p>
+        </section>
+
+        <section id="flujo" class="card">
+          <div class="section-title"><h2>Flujo, uso e impacto de la información</h2></div>
+
+          <h3>Cómo se genera y circula la información</h3>
+          <p class="sub">En Solistica, los procesos operativos (transporte, almacenes, cadena de frío, inventarios, pedidos, devoluciones) generan datos en tiempo real: órdenes de transporte, recepción y salida de mercancías, trazabilidad de carga, temperaturas de carga refrigerada, estados de entrega, devoluciones, movimientos internos de almacén, etc.</p>
+          <p class="sub">Estos datos son capturados desde distintos puntos: terminales móviles de picking y escaneo, sensores (temperatura, Bluetooth), sistemas de GPS para flotas, sistemas de control de almacenes y transporte. Luego, la información se consolida en las bases de datos centrales (soportadas por plataformas como Oracle, BlueYonder Luminate Logistics, Manhattan Active Supply Chain), lo que permite que múltiples áreas (operaciones, logística, finanzas, atención al cliente, gestión de calidad) accedan en tiempo real o casi real a datos consistentes y actualizados.</p>
+          <p class="sub">Desde allí, los módulos de reportes, dashboards analíticos, herramientas BI/MIS y DSS procesan los datos para generar información útil para la gestión diaria, control, monitoreo de KPIs, cumplimiento normativo, trazabilidad, eficiencia operativa, etc.</p>
+
+          <h3>Ejemplos reales de uso</h3>
+          <p class="sub">Gestión de rutas y transporte: gracias al sistema SCM + TPS + sensores GPS, se planifican rutas optimizadas, se monitorea en tiempo real la ubicación de la flota, lo que permite ajustes dinámicos, evitar demoras, redirigir unidades si surge un problema, y asegurar entregas puntuales.</p>
+          <p class="sub">Control de inventarios y almacenes: los módulos ERP/MIS permiten llevar un control preciso de entradas/salidas, stock disponible, niveles mínimos, rotación de productos y ubicación física dentro de almacenes. Esto reduce errores, pérdidas o desabastecimientos.</p>
+          <p class="sub">Trazabilidad y cadena de frío: en productos perecederos, farmacéuticos o sensibles, los sensores de temperatura, junto con el sistema de monitoreo, registran condiciones ambientales durante almacenamiento y transporte, asegurando cumplimiento sanitario y calidad — además de permitir auditorías internas o externas.</p>
+          <p class="sub">Reportes de desempeño y toma de decisiones gerenciales: los dashboards de BI/MIS sintetizan métricas clave (tiempos de entrega, eficiencia de flota, costos logísticos, devoluciones, niveles de servicio), lo que facilita la evaluación de desempeño, identificación de cuellos de botella y planificación estratégica.</p>
+          <p class="sub">Atención al cliente y postventa: mediante trazabilidad y registros precisos, la empresa puede responder consultas sobre estado de envíos, devoluciones, garantías, historial de entrega, lo que mejora transparencia y confianza del cliente.</p>
+        </section>
+
+        <section id="ventajas" class="card">
+          <div class="section-title"><h2>Ventajas y limitaciones del sistema de información de Solistica</h2></div>
+
+          <h3>Ventajas del sistema</h3>
+          <p class="sub"><strong>1. Integración total de operaciones logísticas</strong><br>La combinación de sistemas SCM (BlueYonder, Manhattan), ERP (Oracle) y BI permite integrar transporte, almacenes, cadena de frío, inventarios, trazabilidad y administración financiera en una sola plataforma interoperable. Esto reduce la fragmentación de datos y garantiza un flujo continuo de información entre países, centros de distribución y clientes.</p>
+
+          <p class="sub"><strong>2. Visibilidad en tiempo real y trazabilidad completa</strong><br>El monitoreo GPS, sensores de temperatura, dispositivos Bluetooth y registros automáticos permiten rastrear en tiempo real: ubicación de unidades, condiciones ambientales, estado de pedidos, entregas y devoluciones. Esto es crítico en industrias de alta exigencia, como alimentos, retail y farmacia.</p>
+
+          <p class="sub"><strong>3. Automatización de procesos clave</strong><br>Los sistemas TPS y SCM automatizan operaciones repetitivas: registro de entradas/salidas, movimientos de inventario, confirmaciones de entrega, monitoreo de temperatura y programación de rutas. Esto disminuye errores humanos y aumenta la eficiencia operativa.</p>
+
+          <p class="sub"><strong>4. Capacidad analítica y predictiva</strong><br>Las herramientas BI y DSS permiten anticipar cambios en la demanda, predecir disrupciones en la cadena, optimizar rutas y capacidad de flota, e identificar tendencias y cuellos de botella. Esto mejora la toma de decisiones tácticas y estratégicas.</p>
+
+          <p class="sub"><strong>5. Escalabilidad mediante tecnología en la nube</strong><br>El uso de plataformas cloud facilita acceso desde múltiples países, ampliación de capacidad sin infraestructura adicional, actualizaciones inmediatas y reducción de costos de mantenimiento. Esto permite que Solistica se adapte al crecimiento regional.</p>
+
+          <p class="sub"><strong>6. Cumplimiento normativo y auditorías más simples</strong><br>La trazabilidad digital y las bases de datos unificadas facilitan auditorías sanitarias, auditorías ambientales, cumplimiento de normas de cadena de frío y certificaciones ISO. Esto protege la operación frente a riesgos regulatorios.</p>
+
+          <p class="sub"><strong>7. Mejora en la experiencia del cliente</strong><br>Los sistemas permiten: información precisa sobre el estado de los envíos, tiempos de entrega más confiables, soporte para devoluciones y logística inversa. Esto fortalece la relación con clientes corporativos.</p>
+
+          <h3>Limitaciones del sistema</h3>
+          <p class="sub"><strong>1. Dependencia tecnológica muy alta</strong><br>El nivel de automatización implica que fallas en conectividad, servidores en la nube, sensores IoT o enlaces de integración pueden afectar la operación completa (rutas, órdenes, registros, inventarios).</p>
+
+          <p class="sub"><strong>2. Costo elevado de implementación y mantenimiento</strong><br>Plataformas como Oracle, BlueYonder y Manhattan requieren suscripciones de alto costo, personal altamente capacitado e inversiones constantes en dispositivos y sensores. Esto representa una barrera para unidades pequeñas o nuevos mercados.</p>
+
+          <p class="sub"><strong>3. Complejidad del ecosistema tecnológico</strong><br>El uso de múltiples plataformas interconectadas puede generar dificultades en la interoperabilidad, riesgo de duplicidad de datos, necesidad de integraciones personalizadas y alta curva de aprendizaje para el personal. Si no se gestiona adecuadamente, puede disminuir la eficiencia esperada.</p>
+
+          <p class="sub"><strong>4. Vulnerabilidad a ciberataques o accesos indebidos</strong><br>Aunque los sistemas cuentan con cifrado y protocolos, la información logística es sensible: rutas, clientes, inventarios, movimientos internacionales, cadena de frío. Una brecha de seguridad podría causar pérdidas económicas, afectación a clientes y sanciones regulatorias.</p>
+
+          <p class="sub"><strong>5. Dependencia de la calidad de los datos ingresados</strong><br>Si los operadores cometen errores al registrar inventarios, entregas, rutas u órdenes, el sistema reproduce dichos errores en toda la cadena, afectando reportes y decisiones. Esto hace indispensable la capacitación continua.</p>
+
+          <p class="sub"><strong>6. Integración desigual entre países/regiones</strong><br>En operaciones multinacionales, la infraestructura tecnológica puede ser heterogénea. Algunas regiones pueden tener menor conectividad, carecer de ciertos dispositivos o usar procedimientos más antiguos, lo que genera brechas en la calidad de los datos y del servicio.</p>
+        </section>
+
+        <section id="conclusiones" class="card">
+          <div class="section-title"><h2>Conclusiones y recomendaciones</h2></div>
+
+          <h3>Conclusiones</h3>
+          <p class="sub">El sistema de información de Solistica es un componente central para su operación. La empresa depende de un ecosistema tecnológico altamente integrado (SCM, ERP, TPS, BI, DSS y sistemas especializados), que permite coordinar miles de procesos simultáneos en transporte, almacenes, cadena de frío, logística internacional y servicios complementarios. Sin esta infraestructura digital, la magnitud y complejidad de sus operaciones sería imposible de gestionar con precisión.</p>
+
+          <p class="sub">La integración entre plataformas permite una cadena de suministro visible, trazable y eficiente. El uso de BlueYonder, Manhattan y Oracle asegura que la información fluya con coherencia entre áreas y países. La trazabilidad en tiempo real —tanto de productos como de flota— fortalece la confiabilidad del servicio y cumple con normativas sanitarias y logísticas.</p>
+
+          <p class="sub">Las herramientas analíticas mejoran la toma de decisiones tácticas y estratégicas. Gracias a la analítica avanzada (BI) y modelos predictivos (DSS), Solistica puede anticipar disrupciones, optimizar rutas, administrar recursos de manera inteligente e identificar oportunidades de mejora continua en su red logística.</p>
+
+          <p class="sub">El sistema contribuye directamente a la satisfacción del cliente y al valor del servicio. La precisión en inventarios, control de temperatura, puntualidad en entregas y transparencia en el seguimiento de pedidos elevan los niveles de servicio y fortalecen la ventaja competitiva de Solistica como operador 3PL.</p>
+
+          <p class="sub">A pesar de sus fortalezas, existen limitaciones naturales por la complejidad y dependencia tecnológica. El ecosistema digital requiere alta inversión, personal especializado, integraciones constantes y estrictos controles de seguridad. Además, la calidad del sistema depende, en gran medida, de la calidad de los datos que ingresan los operadores.</p>
+
+          <h3>Recomendaciones</h3>
+          <p class="sub"><strong>1. Fortalecer la ciberseguridad y los mecanismos de control</strong><br>Implementar auditorías constantes, mejores prácticas de seguridad, segmentación de redes y capacitación en ciberhigiene. La logística es un sector atractivo para ataques, especialmente por la información sensible que maneja.</p>
+
+          <p class="sub"><strong>2. Ampliar la automatización con tecnologías emergentes</strong><br>Integrar tecnologías como RFID de última generación, visión por computadora para conteo automático, inteligencia artificial para pronóstico de demanda y machine learning para mantenimiento predictivo de flotas. Estas tecnologías pueden elevar aún más la eficiencia y reducir costos.</p>
+
+          <p class="sub"><strong>3. Homogeneizar la infraestructura entre países</strong><br>Establecer estándares regionales para conectividad, dispositivos, protocolos de registro, sensores en cadena de frío y herramientas de monitoreo. Esto asegurará que la calidad de los datos y de los servicios sea equivalente en todos los mercados.</p>
+
+          <p class="sub"><strong>4. Continuar la capacitación del personal</strong><br>Los sistemas avanzados dependen de operadores capacitados. Se recomienda consolidar programas permanentes de formación en manejo de ERP/SCM, operación de dispositivos móviles, gestión de inventarios, buenas prácticas de captura de datos y seguridad digital. La capacitación reduce errores y mejora la precisión del sistema.</p>
+
+          <p class="sub"><strong>5. Optimizar integraciones entre plataformas</strong><br>A medida que Solistica adopte nuevas herramientas, se recomienda estandarizar APIs, revisar la arquitectura SOA/microservicios, reducir redundancia de datos y asegurar interoperabilidad con clientes y proveedores. Esto mejora la estabilidad y evita cuellos de botella.</p>
+
+          <p class="sub"><strong>6. Incrementar el uso de analítica avanzada</strong><br>Aprovechar más profundamente las capacidades de BI/DSS para pronósticos de demanda, simulación de rutas, análisis de sensibilidad, optimización de costos y predicción de devoluciones. La analítica es clave para decisiones estratégicas y para mantener competitividad.</p>
+
+          <p class="sub"><strong>7. Potenciar soluciones de cadena de frío</strong><br>Dado que la industria farmacéutica y alimentaria son sectores críticos, se recomienda ampliar el monitoreo continuo, incorporar alertas automáticas en tiempo real, mejorar protocolos de auditoría digital y reforzar sensores con mayor precisión. Esto asegura cumplimiento regulatorio y reduce riesgos de pérdida de mercancía.</p>
+        </section>
+
+        <section id="referencias" class="card">
+          <div class="section-title"><h2>Referencias</h2></div>
+          <p class="sub">Baraff, D., & Witkin, A. (1998). Large steps in cloth simulation. ACM SIGGRAPH Conference Proceedings, 43–54.</p>
+          <p class="sub">Bradley, T. (2019). Biomechanics of animal movement. Cambridge University Press.</p>
+          <p class="sub">Craig, J. J. (2005). Introduction to robotics: Mechanics and control (3.ª ed.). Pearson Prentice Hall.</p>
+          <p class="sub">Feynman, R. P., Leighton, R., & Sands, M. (2013). The Feynman lectures on physics. Basic Books.</p>
+          <p class="sub">Halliday, D., Resnick, R., & Walker, J. (2018). Fundamentals of physics (11.ª ed.). Wiley.</p>
+          <p class="sub">House, D., & Keyser, J. (2016). Foundations of physically based modeling and animation. CRC Press.</p>
+          <p class="sub">Kreyszig, E. (2011). Advanced engineering mathematics (10.ª ed.). Wiley.</p>
+          <p class="sub">Millington, I., & Funge, J. (2016). Artificial intelligence for games (3.ª ed.). CRC Press.</p>
+          <p class="sub">Murray, R. M., Li, Z., & Sastry, S. S. (1994). A mathematical introduction to robotic manipulation. CRC Press.</p>
+          <p class="sub">Raschke, M. (2020). Parallel computing for engineering and scientific problems. Springer.</p>
+          <p class="sub">Shabana, A. A. (2013). Computational dynamics (3.ª ed.). Wiley.</p>
+          <p class="sub">Teschner, M., et al. (2004). Collision detection for deformable objects. Computer Graphics Forum, 24(1), 61–81.</p>
+          <p class="sub">Tonnesen, D. (1998). Motion control using physics-based models. ACM SIGGRAPH Courses.</p>
+          <p class="sub">Van Den Berg, J., Guy, S. J., Lin, M., & Manocha, D. (2011). Reciprocal n-body collision avoidance. International Symposium on Robotics Research.</p>
+          <p class="sub">Zatsiorsky, V. M. (2002). Kinetics of human motion. Human Kinetics.</p>
+          <p class="sub">Solistica. (s.f.). FEMSA Logística ahora es Solistica. Blog Solistica. https://blog.solistica.com/femsa-logistica-ahora-es-solistica</p>
+          <p class="sub">Solistica. (s.f.). Más allá de la entrega: Solistica reimagina la logística en un mundo en constante cambio. Blog Solistica. https://blog.solistica.com/mas-alla-de-la-entrega-solistica-reimagina-la-logistica-en-un-mundo-en-constante-cambio</p>
+        </section>
+
+        <footer class="small muted">Documento elaborado para presentación académica — Solistica (contenido provisto por el usuario)</footer>
+      </div>
+
+      <aside class="tools-panel">
+        <h3>Herramientas</h3>
+
+        <button id="themeBtn">Cambiar tema</button>
+        <a class="download-btn" href="SISTEMAS DE INFORMACION DE SOLISTICA vfinal.pdf" download>Descargar PDF</a>
+      </aside>
+</main>
+  </div>
+
+  <script>
+  document.getElementById("themeBtn").onclick = function() {
+    document.body.classList.toggle("dark");
+  };
+</script>
+</body>
+</html>
